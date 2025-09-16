@@ -2,7 +2,7 @@
   "name": "character-counter",
   "displayName": "Character Counter",
   "description": "Displays the character count of the document and selection in the status bar.",
-  "publisher": "lonebula",
+  "publisher": "Lonebula9",
   "repository": {
     "type": "git",
     "url": "https://github.com/lonebula/character-counter.git"
