@@ -1,6 +1,6 @@
 {
-  "name": "character-counter",
-  "displayName": "Character Counter",
+  "name": "quick-character-counter",
+  "displayName": "Quick Character Counter",
   "description": "Displays the character count of the document and selection in the status bar.",
   "publisher": "Lonebula9",
   "repository": {
