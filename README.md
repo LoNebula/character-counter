@@ -21,4 +21,3 @@ Initial release of the Character Counter extension.
 ---
 
 **Enjoy!**
-
