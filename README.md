@@ -34,7 +34,7 @@ npm install -g typescript
 ```
 
 2. Set Up the Project
-Navigate to the project folder and install the required coding libraries (like the VS Code API definitions).
+Navigate to the project's root directory (the one containing the package.json file) and install the required libraries.
 ```bash
 # Navigate to the project's root directory
 cd (path/to/your/project/folder)
