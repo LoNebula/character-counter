@@ -25,5 +25,30 @@ Instructions to package this project into a .vsix file.
 
 1. Prepare Your Environment (First Time Only)
 First, you need to install the necessary tools. You only need to do this once per machine.
+```bash
+# Install the VS Code extension packaging tool (vsce)
+npm install -g vsce
+
+# Install the TypeScript compiler
+npm install -g typescript
+```
+
+2. Set Up the Project
+Navigate to the project folder and install the required coding libraries (like the VS Code API definitions).
+```bash
+# Navigate to the project's root directory
+cd (path/to/your/project/folder)
+
+# Install the necessary libraries
+npm install
+```
+
+3. Package the Extension
+Once everything is set up, create the .vsix file with this command.
+
+```bash
+# Create the .vsix file
+vsce package
+```
 
 **Enjoy!**
