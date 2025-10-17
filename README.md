@@ -20,7 +20,7 @@ Initial release of the Character Counter extension.
 
 ---
 
-Building the .vsix file
+### Building the .vsix file
 Instructions to package this project into a .vsix file.
 
 1. Prepare Your Environment (First Time Only)
