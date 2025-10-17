@@ -51,4 +51,6 @@ Once everything is set up, create the .vsix file with this command.
 vsce package
 ```
 
+If successful, a file named [extension-name]-[version].vsix will be created in the project's root directory. 🎉
+
 **Enjoy!**
