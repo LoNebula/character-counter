@@ -43,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// テキストの選択範囲が変更されたとき
 	context.subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBar));
 	// ドキュメントの内容が変更されたとき
-	context.subscriptions.push(vscode.workspace.onDidChangeTextDocument(e => {
+	context.subscriptions.push(vscode.workspace.onDidChangeTextDocument((e: vscode.TextDocumentChangeEvent) => {
 		// 変更されたドキュメントが現在アクティブなエディタのものであることを確認
 		if (vscode.window.activeTextEditor && e.document === vscode.window.activeTextEditor.document) {
 			updateStatusBar();

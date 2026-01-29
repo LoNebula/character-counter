@@ -1,11 +1,11 @@
 {
   "name": "character-counter",
-  "displayName": "Character Counter",
+  "displayName": "LoNebula9 Character Counter",
   "description": "Displays the character count of the document and selection in the status bar.",
-  "publisher": "lonebula",
+  "publisher": "LoNebula9",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lonebula/character-counter.git"
+    "url": "https://github.com/LoNebula9/character-counter.git"
   },
   "license": "MIT",
   "version": "0.0.1",
