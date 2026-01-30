@@ -14,6 +14,6 @@ There are no special requirements or dependencies for this extension.
 
 ## Release Notes
 
-### 0.0.2
+### 0.0.3
 
 Initial release of the Character Counter extension.
