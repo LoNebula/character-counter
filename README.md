@@ -1,4 +1,4 @@
-# character-counter README
+# character-counter
 
 This is a simple extension for Visual Studio Code and Cursor that displays the character count of your document in the status bar.
 
