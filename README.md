@@ -1,5 +1,6 @@
 <img src="image/icon.png" width="100" align="right"/>
 
+
 # character-counter
 
 [![Version](https://img.shields.io/visual-studio-marketplace/v/LoNebula9.character-counter?cacheSeconds=3600)](https://marketplace.visualstudio.com/items?itemName=LoNebula9.character-counter)
