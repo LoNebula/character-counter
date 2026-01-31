@@ -21,6 +21,6 @@ This is a simple extension for Visual Studio Code and Cursor that displays the c
 
 ## Release Notes
 
-### 0.0.6
+### 0.0.7
 
 Initial release of the Character Counter extension.
