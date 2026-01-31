@@ -1,3 +1,5 @@
+<img src="image/icon.png" width="100" align="right"/>
+
 # character-counter
 
 This is a simple extension for Visual Studio Code and Cursor that displays the character count of your document in the status bar.

@@ -3,12 +3,13 @@
   "displayName": "LoNebula9 Character Counter",
   "description": "Displays the character count of the document and selection in the status bar.",
   "publisher": "LoNebula9",
+  "icon": "image/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/LoNebula9/character-counter.git"
   },
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.99.0"
   },
