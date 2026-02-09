@@ -9,7 +9,7 @@
     "url": "https://github.com/LoNebula9/character-counter.git"
   },
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.99.0"
   },

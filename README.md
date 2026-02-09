@@ -18,9 +18,3 @@ This is a simple extension for Visual Studio Code and Cursor that displays the c
 *   **Real-time Updates**: The count updates automatically as you type, edit, or change your selection.
 
 ![Character Counter Screenshot](image/view.png)
-
-## Release Notes
-
-### 0.0.7
-
-Initial release of the Character Counter extension.
