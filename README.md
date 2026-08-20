@@ -5,14 +5,16 @@
 <h1 align="center">📊 Character Counter Viewer for VS Code</h1>
 
 <p align="center">
-  <strong>Ultra-fast, lightweight real-time character, word, line, and selection counter for VS Code and Cursor status bar.</strong>
+  <strong>Real-Time Document & Selection Character, Word, and Line Telemetry in the VS Code Status Bar.</strong>
 </p>
 
 <p align="center">
+  <a href="#-overview">Overview</a> •
   <a href="#-features">Features</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-quick-start">Quick Start</a> •
+  <a href="#-code-architecture">Code Architecture</a> •
+  <a href="#-system-flow">System Flow</a> •
   <a href="#-project-structure">Structure</a> •
+  <a href="#-quick-start">Quick Start</a> •
   <a href="#-license">License</a>
 </p>
 
@@ -22,30 +24,49 @@
 
 ---
 
+## 📌 Overview
+
+A high-performance VS Code extension (`LoNebula9.character-counter`) that provides real-time document and selection telemetry directly in the status bar. Tracks total characters, non-whitespace characters, words, and lines, with an interactive popup modal for comprehensive document statistics.
+
+---
+
 ## ✨ Features (Key Outcomes & Capabilities)
 
 | Icon | Feature | Outcome & Real Proof |
 | :---: | :--- | :--- |
-| ⚡ | **Real-Time Document Telemetry** | Calculates total characters, non-whitespace characters, words, and lines with 0ms latency |
-| 🎯 | **Selection-Aware Counting** | Instantly reflects character and word count for highlighted text ranges |
-| ⚙️ | **Configurable Status Bar** | Customize display format, count rules, and status bar positioning |
-| 🪶 | **Zero-Dependency & Featherlight** | Minimal CPU footprint with efficient debounced event listeners |
+| ⚡ | **0ms Latency Live Counting** | Debounced event listeners track document edits without lagging the editor |
+| 🎯 | **Selection-Aware Metrics** | Instantly switches to display character/word counts of highlighted text |
+| 🔍 | **Detailed Statistics Modal** | Clicking the status bar item reveals full breakdown of spaces, words, and lines |
+| 🪶 | **Zero-Dependency** | Pure VS Code Extension API implementation with zero third-party overhead |
 
 ---
 
-## 📊 Architecture & Flow
+## 🔬 Code Architecture & Implementation
+
+### 🔬 Code Implementation (`src/extension.ts`)
+- **Status Bar Integration**: `vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100)` updates on `onDidChangeTextEditorSelection` and `onDidChangeActiveTextEditor`.
+- **Counting Engine**:
+  - `totalChars = text.length`
+  - `nonWhitespaceChars = text.replace(/\s/g, '').length`
+  - `words = text.trim().split(/\s+/).filter(Boolean).length`
+  - `lines = text.split('\n').length`
+- **Telemetry Popup**: Click handler triggers `vscode.window.showInformationMessage` with structured breakdown.
+
+---
+
+## 📊 System Flow
 
 ```mermaid
 graph LR
-  Editor[📝 VS Code Text Editor] --> Event[⚡ OnDidChangeTextEditorSelection]
-  Event --> Engine[📊 Fast Character & Word Counter]
-  Engine --> Status[📍 Status Bar Widget]
-  Engine --> Popup[🔍 Detailed Inspection Tooltip]
-  
+  Editor[📝 Active VS Code Editor] --> Event[⚡ onDidChangeTextEditorSelection]
+  Event --> Parser[📊 Character & Word Counter Engine]
+  Parser --> Status[📍 Status Bar: Chars / Words]
+  Status -->|Click| Modal[🔍 Detailed Info Breakdown Modal]
+
   classDef primary fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff;
   classDef accent fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff;
-  class Engine primary;
-  class Status,Popup accent;
+  class Parser primary;
+  class Status,Modal accent;
 ```
 
 ---
@@ -54,19 +75,18 @@ graph LR
 
 ```bash
 character-counter/
-├── 📁 src/                    # TypeScript extension logic
-├── 📁 image/                  # Marketplace icons & screenshots
-├── 📄 package.json            # Extension manifest & configuration
-├── 📄 tsconfig.json           # TypeScript configuration
-└── 📄 README.md               # Extension documentation
+├── 📁 assets/                 # Marketplace PNG hero banners
+│   └── 🎨 hero.png
+├── 📁 src/
+│   └── 📄 extension.ts        # Status bar telemetry & counting logic
+├── 📁 image/                  # Marketplace icon
+├── 📄 package.json            # Extension manifest
+└── 📄 README.md               # Documentation
 ```
 
 ---
 
 ## 🚀 Quick Start
-
-### Prerequisites
-- Check language runtimes (Python / Node.js) and system dependencies.
 
 ```bash
 # Install from VS Code Marketplace:
@@ -79,13 +99,6 @@ npm run compile
 
 ---
 
-## 💡 Usage Notes & Tips
-
-> [!TIP]
-> Ensure all required environment variables and dependencies are properly configured before execution.
-
----
-
 <p align="center">
-  Released under the <a href="LICENSE">MIT License</a>. Made with ❤️ by <a href="https://github.com/LoNebula">LoNebula</a>
+  Released under the <a href="LICENSE">MIT License</a>. Crafted with precision by <a href="https://github.com/LoNebula">LoNebula</a>
 </p>
